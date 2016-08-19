@@ -39,6 +39,27 @@ public class BasepointDiagram {
 		size = newTravelInd.length;
 	}
 	
+	public ArrayList<Integer> traverse(int selfIntersections, int[] ordering) {
+		ArrayList<Integer> travelPath = new ArrayList<Integer>();
+		ArrayList<Integer> positionList = new ArrayList<Integer>();
+		for (int k = 0; k < ordering.length; k++) {
+			positionList.add(ordering[k]);
+		}
+		travelPath.add(1);
+		int current = 1;
+		int count = selfIntersections;
+		int indexStart = 0; int indexEnd = 0;
+		while (count>0) {
+			indexStart = positionList.indexOf(current*-1);
+			indexEnd = getNext(indexStart);
+			current = ordering[indexEnd];
+			travelPath.add(current);
+			count--;
+		}
+		
+		return travelPath;
+	}
+	
 	
 
 }
