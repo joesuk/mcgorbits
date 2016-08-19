@@ -11,19 +11,46 @@ import java.util.*;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
-
+/**
+ * Performs basepoint analysis to find exhaustive list of words for curves of a certain self-intersetion number, up to cyclic reduction.
+ * @author Joe
+ *
+ */
 public class BasepointAnalysis {
+	/**
+	 * Self intersection number.
+	 */
 	public int selfIntersections;
+	/**
+	 * BasepointReader storing information about our basepoint diagrams and simple loop arrangements.
+	 */
 	public BasepointReader bp;
+	/**
+	 * Set of closed curves.
+	 */
 	public Set<Curve> curves = new HashSet<Curve>();
+	/**
+	 * Set of reduced words representing closed curves.
+	 */
 	public Set<String> words = new HashSet<String>();
+	/**
+	 * Auxiliary set of curves not essential to our analysis.
+	 */
 	public Set<Curve> extraCurves = new HashSet<Curve>();
 	
+	/**
+	 * Constructor
+	 * @param newBP New bp
+	 * @param newSI New selfIntersections
+	 */
 	public BasepointAnalysis(BasepointReader newBP, int newSI) {
 		bp = newBP;
 		selfIntersections = newSI;
 	}
 	
+	/**
+	 * Peforms basepoint analysis.
+	 */
 	public void analyze() {
 		for (BasepointDiagram diagram : bp.getDiagrams()) {
 			for (SimpleLoops simples : bp.getSimples()) {
@@ -32,12 +59,24 @@ public class BasepointAnalysis {
 		}
 	}
 	
+	/**
+	 * Performs basepoint analysis for a given loop arrangement and basepoint diagram.
+	 * @param diagram Basepoint diagram to use
+	 * @param simples Simple loop arrangement to use
+	 */
 	public void analyzeDiagram(BasepointDiagram diagram, SimpleLoops simples) {
 		for (int i = 0; i < simples.getOrdering().length; i++) {
 			analyzeOrdering(simples.getOrderingPermutations()[i], diagram, simples);
 		}		
 	}
 	
+	/**
+	 * Performs basepoint analysis for one specific cyclic permutation of simple loop
+	 * arrangement's ordering (see SimpleLoops.cyclicPermute()).
+	 * @param ordering Specific cyclic permutation of ordering.
+	 * @param diagram Basepoint diagram to use
+	 * @param simples Simple loop arrangement to use
+	 */
 	public void analyzeOrdering(int[] ordering, BasepointDiagram diagram, SimpleLoops simples) {
 
 		ArrayList<Integer> travelPath = diagram.traverse(selfIntersections, ordering);
@@ -72,7 +111,7 @@ public class BasepointAnalysis {
 			Curve x12 = new Curve(i2,swTorus);
 
 
-			if (x11.selfIntersection() == selfIntersections) {
+			if (x11.selfIntersection() == selfIntersections) { // We use Lusztig's algorithm for selfIntersections() method.
 				curves.add(x11);
 				words.add(x11.toString());
 				System.out.println("\n"+x11.toString() + " self-int number  " + x11.selfIntersection() + " word length " + x11.toString().length());
@@ -80,7 +119,11 @@ public class BasepointAnalysis {
 		}
 	}
 	
-	
+	/**
+	 * Finds free group inverse of given word.
+	 * @param word Word to find inverse of.
+	 * @return Inverse word.
+	 */
 	static String inverse(String word) {
 		
 		// word = reduceWord(new StringBuilder(word));
@@ -100,6 +143,11 @@ public class BasepointAnalysis {
 		return inverse.toString();
 	}
 	
+	/**
+	 * Cyclically reduces word (conjugacy class).
+	 * @param word Word to be reduced.
+	 * @return Reduced word.
+	 */
 	static String reduceWord(StringBuilder word) {
 		int max = word.length();
 		while (max > 0) {
@@ -127,6 +175,11 @@ public class BasepointAnalysis {
 		return word.toString();
 	}
 	
+	/**
+	 * Cyclically reduces word (conjugacy class).
+	 * @param word Word to be reduced.
+	 * @return Reduced word.
+	 */
 	static String reduceWord(String wordString) {
 		StringBuilder word = new StringBuilder(wordString);
 		int max = word.length();
@@ -155,48 +208,12 @@ public class BasepointAnalysis {
 		return word.toString();
 	}
 	
-	public boolean contains(Curve x11) {
-		Iterator it = curves.iterator();
-		while (it.hasNext()) {
-			Curve curve = (Curve)it.next();
-			if (curve.toString().equals(x11.toString())) {
-				return true;
-			} else if (isCycled(curve.toString(),x11.toString())) {
-				return true;
-			}
-		}
-		return false;
-	}
 	
-	static boolean isCycled(String a, String b) {
-		a = reduceWord(a);
-		b = reduceWord(b);
-		a = a.replace('A','c');
-		a = a.replace('B','d');
-		b = b.replace('A','c');
-		b = b.replace('B','d');
-		if (a.length() != b.length()) {
-			return false;
-		}
-		
-		int max = Math.max(a.length(),b.length());
-		String temp = a;
-		while (max>0) {
-			StringBuilder newTemp = new StringBuilder(temp);
-			char j = temp.charAt(0);
-			newTemp.deleteCharAt(0);
-			newTemp.append(j);
-			if (newTemp.toString().equals(b)) {
-				return true;
-			}
-			max--;
-			temp = newTemp.toString();
-		}
-		return false;
-		
-	}
 
-	void printCases() {
+	/**
+	 * Prints exhaustive list of words after performing basepoint analysis in a text file.
+	 */
+	public void printCases() {
 		String fileName = "Basepoint Analysis for " + selfIntersections + " Self Intersections";
 		try {
 			PrintWriter writer = new PrintWriter(fileName, "UTF-8");
@@ -218,7 +235,7 @@ public class BasepointAnalysis {
 		}
 	}
 	
-	
+	/*
 	static ArrayList<Integer> invertTravel(ArrayList<Integer> travelPath) {
 		ArrayList<Integer> newPath = new ArrayList<Integer>();
 		for (int i = travelPath.size()-1; i >-1; i--) {
@@ -226,51 +243,9 @@ public class BasepointAnalysis {
 		}
 		return newPath;
 	}
+	*/
 	
 	
-	static void clearOrbit(ArrayList<String> toRemove, ArrayList<String> ourCases, String word) {
-
-		String curve = word;
-		//The set of curves
-		HashSet<String> hs = new HashSet<String>();
-		
-		
-		hs.add(word);
-		// hs.add(curve2);
-		// hs.add(curve3);
-		
-		//Maximal word  length of the (classes of) curves to find
-		int maxWL=20;
-		//
-		int boundWLOrbit=maxWL+20;
-		// how many times we apply the generators.
-		int times = 15; 
-		
-		
-		//directory to store results
-				String dir=curve+times+"_orbitERASE/";	
-				statics.CreateDirectory.create(dir);	
-				
-		// the set of curves
-	    hs = Mcg.findOrbits(times, hs, dir, maxWL);
-
-	    //count different classes
-	  
-	    int[][] total1 = new int[boundWLOrbit+100][2];
-
-	    //Store the results
-	    Iterator it = hs.iterator();
-	    
-	    while(it.hasNext()){
-	    	String s1 = (String) it.next();
-	    	
-	    	if (ourCases.contains(s1) && !s1.equals(word)) {
-	    		toRemove.add(s1);
-	    	}
-	    	
-	    	
-	    }
-	}
 	
 
 }

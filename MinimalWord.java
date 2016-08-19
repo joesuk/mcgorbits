@@ -4,53 +4,86 @@ import a_orbits.Mcg;
 import boundary.Word;
 import java.util.*;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+/**
+ * MinimalWord contains methods to test whether a word is minimal in its orbit (with respect to word length) and, if not,
+ * finds a representative minimal element in its orbit. We do this by using the elementary generators of the automorphism 
+ * subgroup which can reduce word length, given by Whitehead in the early 20th Century.
+ * @author Joe
+ *
+ */
 public class MinimalWord {
+	/**
+	 * List of words to check.
+	 */
 	final static ArrayList<String> words = new ArrayList<String>();
+	/**
+	 * List of 
+	 */
 	final static ArrayList<String> torusWords = new ArrayList<String>();
-	
+	/**
+	 * Checks if the words in a given file are minimal and provides a list of reduced words.
+	 * @param fileName Name of file containing list of words.
+	 */
 	public static void checkMinimal(String fileName) {
 		
 		try {
 			readFile(fileName);
-		} catch (Exception e) {System.out.println("woah");}
+		} catch (Exception e) {}
 		    
 		for (String word: words) {
-			if (!torusWords.contains(reduceTorus(word))) {
-				torusWords.add(reduceTorus(word));
+			if (!torusWords.contains(Abelianization.abelianize(word))) {
+				torusWords.add(Abelianization.abelianize(word));
 			}
 		}
 		
-		for (String torusWord : torusWords) {
-			System.out.println(torusWord + " : ");
-			for (String word : words) {
-				if (reduceTorus(word).equals(torusWord)) {
-					if (isMinimal(word)) {
-						System.out.println(word + " : " + true);
-						} else {
-							System.out.println(word + " : " + findMinimal(word));
-						}
+		String newFile = fileName + ".minimal";
+		try{
+			PrintWriter writer = new PrintWriter(newFile, "UTF-8");
+			for (String torusWord : torusWords) {
+				writer.println(torusWord + " : ");
+				for (String word : words) {
+					if (Abelianization.abelianize(word).equals(torusWord)) {
+						if (isMinimal(word)) {
+							writer.println(word + " : " + true);
+							} else {
+								writer.println(word + " : " + findMinimal(word));
+							}
+					}
+				}
+				writer.println();
+			}
+		
+			writer.println(torusWords.size());
+			writer.println();
+		
+			for (String word: words) {
+				if (isMinimal(word)) {
+					writer.println(word + " : " + true);
+				} else {
+					writer.println(word + " : " + findMinimal(word));
 				}
 			}
-			System.out.println();
-		}
-		
-		System.out.println(torusWords.size());
-		System.out.println();
-		
-		for (String word: words) {
-			if (isMinimal(word)) {
-			System.out.println(word + " : " + true);
-			} else {
-				System.out.println(word + " : " + findMinimal(word));
-			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		    
 		
 	}
 	
+	/**
+	 * Checks if a single word is minimal
+	 * @param word Word to be checked.
+	 * @return boolean True if minimal, false otherwise.
+	 */
 	public static boolean isMinimal(String word) {
 		if (bab(word).replaceAll("\\s+","").length() < word.length()) {return false;}
 		if (bAb(word).replaceAll("\\s+","").length() < word.length()) {return false;}
@@ -71,6 +104,11 @@ public class MinimalWord {
 		return true;
 	}
 	
+	/**
+	 * Finds a word of minimal length in the orbit of a given word.
+	 * @param word Word to be used.
+	 * @return New word of minimal length.
+	 */
 	public static String findMinimal(String word) {
 		String reducedWord = word;
 		int count = 0;
@@ -98,7 +136,12 @@ public class MinimalWord {
 		return reducedWord;
 	}
 	
-	public static void readFile(String fileName) throws IOException {
+	/**
+	 * Reads file containing list of words.
+	 * @param fileName Name of file to be read
+	 * @throws IOException
+	 */
+	public void readFile(String fileName) throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(fileName));
 		try {
 			String line = br.readLine();
@@ -110,7 +153,6 @@ public class MinimalWord {
 		    	}
 		        line = br.readLine();
 		    }
-		    
 		}
 		finally {
 			br.close();
@@ -118,82 +160,7 @@ public class MinimalWord {
 	}
 	
 	
-	public static String reduceTorus(String originalWord) {
-		String word = originalWord;
-		int aCount = 0; int bCount = 0; int ACount = 0; int BCount = 0;
-		for( int i=0; i<word.length(); i++ ) {
-		    if (word.charAt(i) == 'a') {
-		    	aCount++;
-		    } else if (word.charAt(i) == 'b') {
-		    	bCount++;
-		    } else if (word.charAt(i) == 'A') {
-		    	ACount++;
-		    } else if (word.charAt(i) == 'B') {
-		    	BCount++;
-		    }
-		}
-		// System.out.println(aCount + " " + bCount + " " + ACount + " " + BCount);
-		
-		if (aCount == ACount) {
-			word = word.replaceAll("a","").replaceAll("A","");
-		} else if (aCount > ACount && ACount != 0) {
-			word = word.replaceAll("A","");
-			int newCount = 0; int i = 0;
-			while (newCount < ACount && i < word.length()) {
-				if (word.charAt(i) == 'a') {
-					StringBuilder reduced = new StringBuilder(word);
-					reduced.deleteCharAt(i);
-					word = reduced.toString();
-					newCount++;
-				}
-				i++;
-			}
-		} else if (ACount > aCount && aCount != 0) {
-			word = word.replaceAll("a","");
-			int newCount = 0; int i = 0;
-			while (newCount < aCount && i < word.length()) {
-				if (word.charAt(i) == 'A') {
-					StringBuilder reduced = new StringBuilder(word);
-					reduced.deleteCharAt(i);
-					word = reduced.toString();
-					newCount++;
-				}
-				i++;
-			}
-		}
-		
-		if (bCount == BCount) {
-			word = word.replaceAll("b","").replaceAll("B","");
-		} else if (bCount > BCount && BCount != 0) {
-			word = word.replaceAll("B","");
-			int newCount = 0; int i = 0;
-			while (newCount < ACount && i < word.length()) {
-				if (word.charAt(i) == 'b') {
-					StringBuilder reduced = new StringBuilder(word);
-					reduced.deleteCharAt(i);
-					word = reduced.toString();
-					newCount++;
-				}
-				i++;
-			}
-		} else if (BCount > bCount && bCount != 0) {
-			word = word.replaceAll("b","");
-			int newCount = 0; int i = 0;
-			while (newCount < bCount && i < word.length()) {
-				if (word.charAt(i) == 'B') {
-					StringBuilder reduced = new StringBuilder(word);
-					reduced.deleteCharAt(i);
-					word = reduced.toString();
-					newCount++;
-				}
-				i++;
-			}
-		}
-		
-		return word.replaceAll("\\s+","");
-		
-		
-	}
+	
 
 	/**
 	 * Takes a word s
