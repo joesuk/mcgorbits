@@ -20,16 +20,16 @@ public class MinimalWord {
 	/**
 	 * List of words to check.
 	 */
-	final static ArrayList<String> words = new ArrayList<String>();
+	public ArrayList<String> words = new ArrayList<String>();
 	/**
 	 * List of 
 	 */
-	final static ArrayList<String> torusWords = new ArrayList<String>();
+	public ArrayList<String> torusWords = new ArrayList<String>();
 	/**
 	 * Checks if the words in a given file are minimal and provides a list of reduced words.
 	 * @param fileName Name of file containing list of words.
 	 */
-	public static void checkMinimal(String fileName) {
+	public void checkMinimal(String fileName) {
 		
 		try {
 			readFile(fileName);
@@ -130,6 +130,9 @@ public class MinimalWord {
 		if (aBa(newWord).length() < newWord.length()) {reducedWord = aBa(newWord);} else {count++;}
 		if (ABA(newWord).length() < newWord.length()) {reducedWord = ABA(newWord);} else {count++;}
 		if (AbA(newWord).length() < newWord.length()) {reducedWord = AbA(newWord);} else {count++;}
+		if (count > 100000) {
+			break;
+		}
 		count = 0;
 		}
 		

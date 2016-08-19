@@ -38,6 +38,34 @@ public class OrbitEnumeration {
 	 */
 	public int boundWLOrbit;
 	
+	/**
+	 * Constructor
+	 */
+	public OrbitEnumeration() {}
+	
+	/**
+	 * distance mutator
+	 * @param newDistance New distance
+	 */
+	public void setDistance(int newDistance) {
+		distance = newDistance;
+	}
+	
+	/**
+	 * maxWL mutator
+	 * @param newMax New maxWL
+	 */
+	public void setMaxWL(int newMax) {
+		maxWL = newMax;
+	}
+	
+	/**
+	 * boundWLOrbit mutator
+	 * @param newBound New boundWLOrbit
+	 */
+	public void setBoundWLOrbit(int newBound) {
+		boundWLOrbit = newBound;
+	}
 	
 	/**
 	 * Generates orbit elements which are duplicated in our list of words.

@@ -30,6 +30,14 @@ public class BasepointReader {
 	public ArrayList<SimpleLoops> simples = new ArrayList<SimpleLoops>();
 	
 	/**
+	 * Constructor
+	 * @param newSI New selfIntersections
+	 */
+	public BasepointReader(int newSI) {
+		selfIntersections = newSI;
+	}
+	
+	/**
 	 * Basepoint diagram accessor
 	 * @return diagrams
 	 */
@@ -73,7 +81,7 @@ public class BasepointReader {
 					i = 0;
 				}
 			}
-		}
+		} catch (Exception e) {}
 		finally {
 			basepointReader.close();
 		}
@@ -92,26 +100,27 @@ public class BasepointReader {
 			SimpleLoops simpleLoops = new SimpleLoops(selfIntersections);
 
 		    while (line != null && loopCount > 0) {
+		    	line = line.replaceAll("\\s","");
 		    	StringBuilder sb = new StringBuilder(line);
 		    	if (line.length() < 5)  {
 		    		simpleLoops.addLoop(sb.toString().replaceAll("\\s+",""));
+		    		loopCount--;
 		    	}
-		    	loopCount--;
 		        line = loopReader.readLine();
 		    }
-		    
-		    String[] orderingString = line.split(",\\s+");
+		    String[] orderingString = line.split(",");
 		    simpleLoops.setOrdering(new int[orderingString.length]);
 		    int[] ordering = simpleLoops.getOrdering();
 		    for (int i = 0; i < ordering.length; i++) {
 		    	ordering[i] = Integer.parseInt(orderingString[i]);
 		    }
+		    simpleLoops.setOrdering(ordering);
 		    			
 		    simpleLoops.cyclicPermute();
 		    simples.add(simpleLoops);
 		    
 		    
-		}
+		} catch (Exception e) {}
 		finally {
 			loopReader.close();
 		}
