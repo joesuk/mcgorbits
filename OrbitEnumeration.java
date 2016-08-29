@@ -1,11 +1,15 @@
 package a_000workshop2016;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 
 import a_orbits.Mcg;
 
@@ -20,11 +24,11 @@ public class OrbitEnumeration {
 	/**
 	 * List of words to be used.
 	 */
-	public ArrayList<String> words = new ArrayList<String>();
+	public Set<String> words = new HashSet<String>();
 	/**
 	 * Words generated within orbits of our list that we want to remove.
 	 */
-	public ArrayList<String> toRemove = new ArrayList<String>();
+	public Set<String> toRemove = new HashSet<String>();
 	/**
 	 * Maximum distance between words (in terms of iterations of elementary transformations) we want to check.
 	 */
@@ -37,6 +41,10 @@ public class OrbitEnumeration {
 	 * Maximum bound on the word length of the orbit.
 	 */
 	public int boundWLOrbit;
+	/**
+	 * Self intersection number
+	 */
+	public int selfIntersections;
 	
 	/**
 	 * Constructor
@@ -66,6 +74,13 @@ public class OrbitEnumeration {
 	public void setBoundWLOrbit(int newBound) {
 		boundWLOrbit = newBound;
 	}
+	/**
+	 * selfIntersections mutator
+	 * @param newSI New selfIntersections
+	 */
+	public void setSelfIntersections(int newSI) {
+		selfIntersections = newSI;
+	}
 	
 	/**
 	 * Generates orbit elements which are duplicated in our list of words.
@@ -76,9 +91,12 @@ public class OrbitEnumeration {
 		try {
 			readFile(fileName);
 		} catch (Exception e) {}
-		ArrayList<String> toRemove = new ArrayList<String>();
-		for (String str : words) {
-		    enumerate(str);
+		showWords();
+		Iterator it = words.iterator();
+		while (it.hasNext()) {
+			String word = (String)it.next();
+			System.out.println(word);
+		    enumerate(word);
 		}
 	}
 	
@@ -214,16 +232,46 @@ public class OrbitEnumeration {
 			String line = br.readLine();
 
 		    while (line != null) {
-		    	StringBuilder sb = new StringBuilder(line);
-		    	if (line.length() >5)  {
-		    		words.add(sb.delete(sb.length()-4,sb.length()).toString().replaceAll("\\s+",""));
-		    	}
+		    	words.add(line.replaceAll("\\s+",""));
 		        line = br.readLine();
 		    }
 		    
+		} catch (Exception e) {
+			System.out.println("asdasd");
 		}
 		finally {
 			br.close();
+		}
+	}
+	
+	public void printWords() {
+		String fileName = "ba" + selfIntersections + ".reduced.txt";
+		try {
+			PrintWriter writer = new PrintWriter(fileName, "UTF-8");
+			for (int i = 1; i < boundWLOrbit+1; i++) {
+				Iterator it = words.iterator();
+				while (it.hasNext()) {
+					String word = (String)it.next();
+					if (word.length() == i) {
+						writer.println(word);
+					}
+				}
+			}
+			writer.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+	}
+	
+	public void showWords() {
+		Iterator it = words.iterator();
+		while (it.hasNext()) {
+			String word = (String)it.next();
+			System.out.println(word);
 		}
 	}
 	

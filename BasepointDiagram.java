@@ -77,6 +77,14 @@ public class BasepointDiagram {
 	}
 	
 	/**
+	 * Mutator for size
+	 * @param newSize new size
+	 */
+	public void setSize(int newSize) {
+		size = newSize;
+	}
+	
+	/**
 	 * Traverse basepoint graph's closed curve with given ordering
 	 * @param selfIntersections Number of self-intersections
 	 * @param ordering Describes edge configuration outside of neighborhood
@@ -101,6 +109,22 @@ public class BasepointDiagram {
 		}
 		
 		return travelPath;
+	}
+	
+	/**
+	 * size accessor
+	 * @return size
+	 */
+	public int getSize() {
+		return size;
+	}
+	
+	/**
+	 * travelInd accessor
+	 * @return
+	 */
+	public int[] getTravelInd() {
+		return travelInd;
 	}
 	
 	

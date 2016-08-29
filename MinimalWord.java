@@ -20,11 +20,20 @@ public class MinimalWord {
 	/**
 	 * List of words to check.
 	 */
-	public ArrayList<String> words = new ArrayList<String>();
+	public Set<String> words = new HashSet<String>();
 	/**
 	 * List of 
 	 */
-	public ArrayList<String> torusWords = new ArrayList<String>();
+	public Set<String> torusWords = new HashSet<String>();
+	/**
+	 * Self Intersection number.
+	 */
+	public int selfIntersections = -1;
+	
+	public MinimalWord(int newSI) {
+		selfIntersections = newSI;
+	}
+	
 	/**
 	 * Checks if the words in a given file are minimal and provides a list of reduced words.
 	 * @param fileName Name of file containing list of words.
@@ -34,19 +43,23 @@ public class MinimalWord {
 		try {
 			readFile(fileName);
 		} catch (Exception e) {}
+		
 		    
 		for (String word: words) {
-			if (!torusWords.contains(Abelianization.abelianize(word))) {
-				torusWords.add(Abelianization.abelianize(word));
-			}
+			torusWords.add(Abelianization.abelianize(word));
+			// System.out.println(Abelianization.abelianize(word));
 		}
 		
-		String newFile = fileName + ".minimal";
+		String newFile = "ba" + selfIntersections + ".minimal.txt";
 		try{
 			PrintWriter writer = new PrintWriter(newFile, "UTF-8");
-			for (String torusWord : torusWords) {
+			Iterator it = torusWords.iterator();
+			while (it.hasNext()) {
+				String torusWord = (String)it.next();
 				writer.println(torusWord + " : ");
-				for (String word : words) {
+				Iterator it2 = words.iterator();
+				while (it2.hasNext()) {
+					String word = (String)it2.next();
 					if (Abelianization.abelianize(word).equals(torusWord)) {
 						if (isMinimal(word)) {
 							writer.println(word + " : " + true);
@@ -60,14 +73,19 @@ public class MinimalWord {
 		
 			writer.println(torusWords.size());
 			writer.println();
+			
+			Iterator it3 = words.iterator();
 		
-			for (String word: words) {
+			while (it3.hasNext()) {
+				String word = (String)it3.next();
 				if (isMinimal(word)) {
 					writer.println(word + " : " + true);
 				} else {
 					writer.println(word + " : " + findMinimal(word));
 				}
 			}
+			
+			writer.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -150,10 +168,7 @@ public class MinimalWord {
 			String line = br.readLine();
 
 		    while (line != null) {
-		    	StringBuilder sb = new StringBuilder(line);
-		    	if (line.length() >5)  {
-		    		words.add(sb.delete(sb.length()-4,sb.length()).toString().replaceAll("\\s+",""));
-		    	}
+		    	words.add(line.replaceAll("\\s+",""));
 		        line = br.readLine();
 		    }
 		}
@@ -563,6 +578,14 @@ public class MinimalWord {
 		Word w2=w1.permute(2);
 		w1=w2.reduce();
 		return w1.toString();
+	}
+	
+	public void showWords() {
+		Iterator it = words.iterator();
+		while (it.hasNext()) {
+			String word = (String)it.next();
+			System.out.println(word);
+		}
 	}
 		
 		

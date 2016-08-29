@@ -1,6 +1,4 @@
 package a_000workshop2016;
-import a_orbits.DriverOrbits2016;
-import a_000workshop2016.*;
 /**
  * Class for testing basepoint analysis.
  * @author Joe
@@ -15,10 +13,22 @@ public class Test {
 		bp.readLoops("si4.txt");
 		} catch (Exception e) {System.out.println("ee");}
 		
-		BasepointAnalysis ba = new BasepointAnalysis(bp,4);
+		/*BasepointAnalysis ba = new BasepointAnalysis(bp,4);
 		ba.analyze();
+		ba.printCases();
+		ba.printWords();
 		
+		OrbitEnumeration oe = new OrbitEnumeration();
+		oe.setDistance(15);
+		oe.setMaxWL(20);
+		oe.setBoundWLOrbit(40);
+		oe.setSelfIntersections(4);
+		oe.generate("ba4.txt");
+		oe.remove();		
+		oe.printWords();*/
 		
+		MinimalWord mw = new MinimalWord(4);
+		mw.checkMinimal("ba4.reduced.txt");
 	}
 
 }

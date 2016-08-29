@@ -1,12 +1,8 @@
 package a_000workshop2016;
-import a_000workshop2016.*;
-import a_torusPantsHL.TestsTorus;
 import a_torusPantsHL.Parametrizations;
 import boundary.Curve;
 import boundary.SurfaceWord;
 import boundary.Word;
-import a_orbits.DriverOrbits2016;
-import a_orbits.Mcg;
 import java.util.*;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -84,20 +80,21 @@ public class BasepointAnalysis {
 		
 		
 		Set<Integer> set = new HashSet<Integer>(travelPath);
+		
+		ArrayList<String> thisCase = simples.getLoopWords();
+		for(int j = 0; j < travelPath.size(); j++) {
+			if (travelPath.get(j) > 0) {
+				word.append(thisCase.get(travelPath.get(j)-1));
+			} else if (travelPath.get(j) < 0) {
+				word.append(inverse(thisCase.get(-1*travelPath.get(j)-1)));
+			}
+		}
+		
 		if (set.size() < travelPath.size() || travelPath.size() != simples.getLoopCount()) {
-			System.out.println("\n" + reduceWord(word) + " NOT A WORD");
+			// System.out.println("\n" + reduceWord(word) + " NOT A WORD");
 			return;
 		} else {
-			ArrayList<String> thisCase = simples.getLoopWords();
-			for(int j = 0; j < travelPath.size(); j++) {
-				if (travelPath.get(j) > 0) {
-					word.append(thisCase.get(travelPath.get(j)-1));
-				} else if (travelPath.get(j) < 0) {
-					word.append(inverse(thisCase.get(-1*travelPath.get(j)-1)));
-				}
-			}
-			
-			
+
 			double[][][] m=Parametrizations.param4();
 			double[][] m1={m[1][1],m[1][2]};
 			SurfaceWord swTorus=Parametrizations.torus(m1);
@@ -114,7 +111,7 @@ public class BasepointAnalysis {
 			if (x11.selfIntersection() == selfIntersections) { // We use Lusztig's algorithm for selfIntersections() method.
 				curves.add(x11);
 				words.add(x11.toString());
-				System.out.println("\n"+x11.toString() + " self-int number  " + x11.selfIntersection() + " word length " + x11.toString().length());
+				// System.out.println("\n"+x11.toString() + " self-int number  " + x11.selfIntersection() + " word length " + x11.toString().length());
 			}
 		}
 	}
@@ -214,10 +211,10 @@ public class BasepointAnalysis {
 	 * Prints exhaustive list of words after performing basepoint analysis in a text file.
 	 */
 	public void printCases() {
-		String fileName = "Basepoint Analysis for " + selfIntersections + " Self Intersections";
+		String fileName = "Basepoint Analysis for " + selfIntersections + " Self Intersections.txt";
 		try {
 			PrintWriter writer = new PrintWriter(fileName, "UTF-8");
-			for (int i = 1; i < 21; i++) {
+			for (int i = 1; i < getMaxLength()+1; i++) {
 				Iterator it = words.iterator();
 				while (it.hasNext()) {
 					String word = (String)it.next();
@@ -226,13 +223,54 @@ public class BasepointAnalysis {
 					}
 				}
 			}
+			writer.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} 
+	}
+	
+	/**
+	 * Prints exhaustive list of words after performing basepoint analysis for further reduction
+	 */
+	public void printWords() {
+		String fileName = "ba" + selfIntersections + ".txt";
+		try {
+			PrintWriter writer = new PrintWriter(fileName, "UTF-8");
+			for (int i = 1; i < getMaxLength()+1; i++) {
+				Iterator it = words.iterator();
+				while (it.hasNext()) {
+					String word = (String)it.next();
+					if (word.length() == i) {
+						writer.println(word);
+					}
+				}
+			}
+			writer.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+	}
+	
+	/**
+	 * Returns max length of words in our list
+	 * @return maxLength max length of words
+	 */
+	public int getMaxLength() {
+		int maxLength = 0;
+		Iterator it = words.iterator();
+		while (it.hasNext()) {
+			String word = (String)it.next();
+			maxLength = Math.max(maxLength,word.length());
 		}
+		return maxLength;
 	}
 	
 	/*

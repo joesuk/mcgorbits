@@ -1,11 +1,9 @@
 package a_000workshop2016;
 import java.util.*;
-import a_torusPantsHL.TestsTorus;
 import a_torusPantsHL.Parametrizations;
 import boundary.Curve;
 import boundary.SurfaceWord;
 import boundary.Word;
-import a_orbits.DriverOrbits2016;
 import a_orbits.Mcg;
 
 public class WordFinder {

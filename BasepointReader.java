@@ -1,10 +1,4 @@
 package a_000workshop2016;
-import a_000workshop2016.*;
-import a_orbits.Mcg;
-import a_torusPantsHL.Parametrizations;
-import boundary.Curve;
-import boundary.SurfaceWord;
-import boundary.Word;
 import java.util.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -76,6 +70,7 @@ public class BasepointReader {
 				i++;
 				if (i == (selfIntersections+1)*2) {
 					BasepointDiagram diagram = new BasepointDiagram((selfIntersections+1)*2);
+					diagram.setSize((selfIntersections+1)*2);
 					diagram.setTravelInd(travelInd);
 					diagrams.add(diagram);
 					i = 0;
@@ -95,34 +90,55 @@ public class BasepointReader {
 	public void readLoops(String loopFile) throws IOException {
 		BufferedReader loopReader = new BufferedReader(new FileReader(loopFile));
 		try {
-			String line = loopReader.readLine();
-			int loopCount = selfIntersections+1;
-			SimpleLoops simpleLoops = new SimpleLoops(selfIntersections);
+			String line = "";
+			while ((line = loopReader.readLine()) != null) {
+				int loopCount = selfIntersections+1;
+				SimpleLoops simpleLoops = new SimpleLoops(selfIntersections);
 
-		    while (line != null && loopCount > 0) {
-		    	line = line.replaceAll("\\s","");
-		    	StringBuilder sb = new StringBuilder(line);
-		    	if (line.length() < 5)  {
-		    		simpleLoops.addLoop(sb.toString().replaceAll("\\s+",""));
-		    		loopCount--;
-		    	}
-		        line = loopReader.readLine();
-		    }
-		    String[] orderingString = line.split(",");
-		    simpleLoops.setOrdering(new int[orderingString.length]);
-		    int[] ordering = simpleLoops.getOrdering();
-		    for (int i = 0; i < ordering.length; i++) {
-		    	ordering[i] = Integer.parseInt(orderingString[i]);
-		    }
-		    simpleLoops.setOrdering(ordering);
+				while (line != null && loopCount > 0) {
+					line = line.replaceAll("\\s","");
+					StringBuilder sb = new StringBuilder(line);
+					if (line.length() < 5)  {
+						simpleLoops.addLoop(sb.toString().replaceAll("\\s+",""));
+						line = loopReader.readLine();
+						loopCount--;
+					}
+				}
+				String[] orderingString = line.split(",");
+				simpleLoops.setOrdering(new int[orderingString.length]);
+				int[] ordering = simpleLoops.getOrdering();
+				for (int i = 0; i < ordering.length; i++) {
+					ordering[i] = Integer.parseInt(orderingString[i]);
+				}
+				simpleLoops.setOrdering(ordering);
 		    			
-		    simpleLoops.cyclicPermute();
-		    simples.add(simpleLoops);
-		    
-		    
+				simpleLoops.cyclicPermute();
+				simples.add(simpleLoops);
+			}
 		} catch (Exception e) {}
 		finally {
 			loopReader.close();
+		}
+	}
+	
+	/**
+	 * Prints basepoint diagram's traversal arrays.
+	 */
+	public void diagramPrint() {
+		for (BasepointDiagram diagram : diagrams) {
+			System.out.println(Arrays.toString(diagram.getTravelInd()));
+		}
+	}
+	
+	/**
+	 * Prints simple loop arrangements
+	 */
+	public void loopPrint() {
+		for (SimpleLoops sl : simples) {
+			for (String word : sl.getLoopWords()) {
+				System.out.println(word);
+			}
+			System.out.println(Arrays.toString(sl.getOrdering()));
 		}
 	}
 	
