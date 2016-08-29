@@ -1,5 +1,5 @@
 # Basepoint-Analysis
-Library for classifying orbits of the mapping class group action on free homotopy classes of punctured torus
+Library for classifying orbits of the mapping class group action on free homotopy classes of the punctured torus
 
 
 We study the action of the mapping class group of the punctured torus on its free homotopy classes of closed oriented curves by
