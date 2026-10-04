@@ -7,18 +7,22 @@
 //
 //   curves si                 words on stdin -> "word SI" per line
 //   curves search K LMAX      minimal words of length <= LMAX with SI = K
-//   curves reps K LMAX        one representative per orbit among those words
+//   curves reps K LMAX [I N]  one representative per orbit among those words;
+//                             with I N, only the I-th of N slices of the
+//                             search (the union over I = 0..N-1 is everything)
 //   curves filter K           words on stdin -> those minimal with SI = K
 //   curves keys               minimal words on stdin -> one representative
 //                             per orbit met
 //   curves children K         orbit representatives on stdin -> the orbits
 //                             with SI = K got from them by inserting one
 //                             loop round the puncture (fast.loop_insertions)
+//   curves stats              words on stdin -> "count primitive minlen maxlen"
 //
 // The number of threads is taken from OMP_NUM_THREADS.
 
 #include <algorithm>
 #include <climits>
+#include <cstdint>
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
@@ -229,6 +233,46 @@ static string explore_orbit(const string& start, std::unordered_set<string>& see
     return best;
 }
 
+// Is the least rotation w no greater than its images under the signed
+// permutations of a, b and under inversion, each in least rotation? Necessary
+// for w to be the representative of its orbit, and cheap.
+static bool least_under_symmetries(const char* w, int n) {
+    char u[2 * MAXLEN];
+    for (const Auto& phi : type1)
+        for (int dir = 0; dir < 2; ++dir) {
+            for (int i = 0; i < n; ++i) {
+                char c = dir ? inv_letter(w[n - 1 - i]) : w[i];
+                u[i] = u[i + n] = phi.image[(int)c][0];
+            }
+            for (int s = 0; s < n; ++s)
+                if (memcmp(u + s, w, n) < 0) return false;
+        }
+    return true;
+}
+
+// Is the minimal word w the representative of its orbit, i.e. the least word
+// of the orbit's minimal set? As explore_orbit, stopping at a smaller word.
+static bool is_orbit_key(const string& w) {
+    if (unoriented(w) != w) return false;
+    size_t n = w.size();
+    std::unordered_set<string> seen;
+    vector<string> queue;
+    queue.push_back(w);
+    seen.insert(w);
+    for (size_t head = 0; head < queue.size(); ++head) {
+        string u = queue[head];
+        for (const vector<Auto>* family : {&type1, &type2})
+            for (const Auto& phi : *family) {
+                string v = act(phi, u);
+                if (v.size() != n) continue;
+                v = unoriented(v);
+                if (v < w) return false;
+                if (seen.insert(v).second) queue.push_back(v);
+            }
+    }
+    return true;
+}
+
 // One representative per orbit among the given minimal words. The
 // representative is the least word of the orbit's minimal set in canonical
 // rotation, taking the lesser of a word and its inverse, as freegroup.orbit_key.
@@ -292,6 +336,7 @@ struct Task {
 
 struct Search {
     int k, lmax, frontier_depth;
+    bool keys_only = false;  // keep only words that represent their orbit
     char letters[MAXLEN];
     int codes[MAXLEN];
     long visited = 0;
@@ -305,9 +350,17 @@ struct Search {
             return;
         }
         ++visited;
-        if (t % p == 0 && letters[t - 1] != inv_letter(letters[0]))
-            if (is_minimal(letters, t) && self_intersection(codes, t, k) == k)
+        if (t % p == 0 && letters[t - 1] != inv_letter(letters[0])) {
+            if (keys_only) {
+                if (least_under_symmetries(letters, t) && is_minimal(letters, t) &&
+                    self_intersection(codes, t, k) == k) {
+                    string w(letters, t);
+                    if (is_orbit_key(w)) found.push_back(w);
+                }
+            } else if (is_minimal(letters, t) && self_intersection(codes, t, k) == k) {
                 found.emplace_back(letters, t);
+            }
+        }
         if (t == lmax) return;
         char prev = inv_letter(letters[t - 1]);
         for (int r = 0; r < 4; ++r) {
@@ -330,25 +383,36 @@ struct Search {
     }
 };
 
-static vector<string> minimal_words(int k, int lmax, long& visited) {
+// Minimal words of length <= lmax with SI = k, in least rotation; with
+// keys_only, just the orbit representatives among them. The search tree is cut
+// at a fixed depth into subtrees; slice i of n takes every n-th subtree
+// (and, for i = 0, the part above the cut).
+static vector<string> minimal_words(int k, int lmax, long& visited, bool keys_only = false,
+                                    size_t slice = 0, size_t slices = 1) {
     vector<Task> tasks;
     Search top;
     top.k = k;
     top.lmax = lmax;
-    top.frontier_depth = 12;
+    top.keys_only = keys_only;
+    top.frontier_depth = 14;
     top.frontier = &tasks;
     for (int r = 0; r < 4; ++r) top.start({string(1, ORDER[r]), 1, 0});
-    vector<string> found = top.found;
-    visited = top.visited;
+    vector<string> found;
+    visited = 0;
+    if (slice == 0) {
+        found = top.found;
+        visited = top.visited;
+    }
 
     #pragma omp parallel
     {
         Search local;
         local.k = k;
         local.lmax = lmax;
+        local.keys_only = keys_only;
         local.frontier_depth = 0;
         #pragma omp for schedule(dynamic, 1) nowait
-        for (size_t i = 0; i < tasks.size(); ++i) local.start(tasks[i]);
+        for (size_t i = slice; i < tasks.size(); i += slices) local.start(tasks[i]);
         #pragma omp critical
         {
             found.insert(found.end(), local.found.begin(), local.found.end());
@@ -385,11 +449,20 @@ int main(int argc, char** argv) {
     if (mode == "si") {
         for (const string& w : read_words())
             printf("%s %d\n", w.c_str(), self_intersection(cyclic_reduce(w), -1));
-    } else if ((mode == "search" || mode == "reps") && argc == 4) {
+    } else if (mode == "search" && argc == 4) {
         long visited = 0;
         vector<string> words = minimal_words(atoi(argv[2]), atoi(argv[3]), visited);
         fprintf(stderr, "%ld\n", visited);
-        print(mode == "search" ? words : orbit_keys(words));
+        print(words);
+    } else if (mode == "reps" && (argc == 4 || argc == 6)) {
+        long visited = 0;
+        size_t slice = argc == 6 ? atol(argv[4]) : 0, slices = argc == 6 ? atol(argv[5]) : 1;
+        if (slices < 1 || slice >= slices) {
+            fprintf(stderr, "reps: need 0 <= I < N\n");
+            return 2;
+        }
+        print(minimal_words(atoi(argv[2]), atoi(argv[3]), visited, true, slice, slices));
+        fprintf(stderr, "%ld\n", visited);
     } else if (mode == "filter" && argc == 3) {
         int k = atoi(argv[2]);
         vector<string> words = read_words();
@@ -408,7 +481,7 @@ int main(int argc, char** argv) {
     } else if (mode == "children" && argc == 3) {
         int k = atoi(argv[2]);
         vector<string> parents = read_words();
-        std::unordered_set<string> survivors;
+        std::unordered_set<string> keys;
         #pragma omp parallel
         {
             std::unordered_set<string> local;
@@ -416,21 +489,41 @@ int main(int argc, char** argv) {
             for (size_t r = 0; r < parents.size(); ++r) {
                 std::unordered_set<string> orbit;
                 explore_orbit(parents[r], orbit);
+                std::unordered_set<string> seen;  // minimal sets of the children met so far
                 for (const string& u : orbit)
                     for (size_t i = 0; i < u.size(); ++i)
                         for (const char* loop : LOOPS) {
                             string w = u.substr(0, i) + loop + u.substr(i);
                             if (cyclic_reduce(w).size() != w.size()) continue;
+                            string v = unoriented(w);
+                            if (seen.count(v)) continue;
                             if (is_minimal(w.data(), (int)w.size()) && self_intersection(w, k) == k)
-                                local.insert(unoriented(w));
+                                local.insert(explore_orbit(v, seen));
                         }
             }
             #pragma omp critical
-            survivors.insert(local.begin(), local.end());
+            keys.insert(local.begin(), local.end());
         }
-        print(orbit_keys(vector<string>(survivors.begin(), survivors.end())));
+        vector<string> out(keys.begin(), keys.end());
+        std::sort(out.begin(), out.end());
+        print(out);
+    } else if (mode == "stats") {
+        long count = 0, primitive = 0;
+        size_t shortest = SIZE_MAX, longest = 0;
+        string w;
+        while (std::cin >> w) {
+            size_t n = w.size();
+            bool power = false;
+            for (size_t d = 1; d < n && !power; ++d)
+                power = n % d == 0 && w.compare(0, n - d, w, d, n - d) == 0;
+            ++count;
+            primitive += !power;
+            shortest = std::min(shortest, n);
+            longest = std::max(longest, n);
+        }
+        printf("%ld %ld %zu %zu\n", count, primitive, count ? shortest : 0, longest);
     } else {
-        fprintf(stderr, "usage: curves si | search K LMAX | reps K LMAX | filter K | keys | children K\n");
+        fprintf(stderr, "usage: curves si | search K LMAX | reps K LMAX [I N] | filter K | keys | children K | stats\n");
         return 2;
     }
     return 0;
