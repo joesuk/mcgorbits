@@ -45,3 +45,20 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# build products
+src/build/
+__pycache__/
+
+# LaTeX build products
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.synctex*.gz
+
+# separate git clones nested inside the Eclipse project
+output/src/a_000workshop2016/
+output/bin/a_000workshop2016/
+output/src/orbit_count/
+output/bin/orbit_count/
