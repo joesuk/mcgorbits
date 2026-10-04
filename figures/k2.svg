@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1054" height="468" viewBox="0 0 1054 468">
+<style>.square{fill:#fff;stroke:#888;stroke-width:1}.hole{fill:#bbb}.curve{fill:none;stroke:#1f4e9c;stroke-width:1.5;stroke-linecap:round}.dot{fill:#d1342f}text{font-family:DejaVu Sans Mono,Menlo,Consolas,monospace;fill:#222}.word{font-size:11px;text-anchor:middle}.title{font-size:15px;font-weight:bold}.note{font-size:11px;fill:#555}</style>
+<rect width="1054" height="468" fill="#fafafa"/>
+<text x="22" y="26" class="title">2 self-intersections: 8 orbits of unoriented curves, 6 primitive</text>
+<text x="22" y="46" class="note">Opposite sides are glued; the puncture is at the corners. a exits right and re-enters left, b exits top and re-enters bottom.</text>
+<rect x="22" y="64" width="150" height="150" class="square"/>
+<path d="M22,64 L31.0,64.0 A9,9 0 0 1 22.0,73.0 Z" class="hole"/>
+<path d="M172,64 L172.0,73.0 A9,9 0 0 1 163.0,64.0 Z" class="hole"/>
+<path d="M172,214 L163.0,214.0 A9,9 0 0 1 172.0,205.0 Z" class="hole"/>
+<path d="M22,214 L22.0,205.0 A9,9 0 0 1 31.0,214.0 Z" class="hole"/>
+<path d="M22.0,101.5 L172.0,176.5" class="curve"/>
+<path d="M22.0,176.5 L172.0,139.0" class="curve"/>
+<path d="M22.0,139.0 L172.0,101.5" class="curve"/>
+<circle cx="122.0" cy="151.5" r="2.2" class="dot"/>
+<circle cx="72.0" cy="126.5" r="2.2" class="dot"/>
+<text x="97.0" y="231" class="word">1. aaa</text>
+<rect x="194" y="64" width="150" height="150" class="square"/>
+<path d="M194,64 L203.0,64.0 A9,9 0 0 1 194.0,73.0 Z" class="hole"/>
+<path d="M344,64 L344.0,73.0 A9,9 0 0 1 335.0,64.0 Z" class="hole"/>
+<path d="M344,214 L335.0,214.0 A9,9 0 0 1 344.0,205.0 Z" class="hole"/>
+<path d="M194,214 L194.0,205.0 A9,9 0 0 1 203.0,214.0 Z" class="hole"/>
+<path d="M294.0,214.0 L344.0,176.5" class="curve"/>
+<path d="M194.0,176.5 L344.0,139.0" class="curve"/>
+<path d="M194.0,139.0 L344.0,101.5" class="curve"/>
+<path d="M194.0,101.5 L244.0,64.0" class="curve"/>
+<path d="M244.0,214.0 L294.0,64.0" class="curve"/>
+<circle cx="262.2" cy="159.5" r="2.2" class="dot"/>
+<circle cx="275.8" cy="118.5" r="2.2" class="dot"/>
+<text x="269.0" y="231" class="word">2. aaabb</text>
+<rect x="366" y="64" width="150" height="150" class="square"/>
+<path d="M366,64 L375.0,64.0 A9,9 0 0 1 366.0,73.0 Z" class="hole"/>
+<path d="M516,64 L516.0,73.0 A9,9 0 0 1 507.0,64.0 Z" class="hole"/>
+<path d="M516,214 L507.0,214.0 A9,9 0 0 1 516.0,205.0 Z" class="hole"/>
+<path d="M366,214 L366.0,205.0 A9,9 0 0 1 375.0,214.0 Z" class="hole"/>
+<path d="M416.0,64.0 L516.0,101.5" class="curve"/>
+<path d="M366.0,101.5 L516.0,139.0" class="curve"/>
+<path d="M366.0,139.0 L466.0,64.0" class="curve"/>
+<path d="M466.0,214.0 L516.0,176.5" class="curve"/>
+<path d="M366.0,176.5 L416.0,214.0" class="curve"/>
+<circle cx="449.3" cy="76.5" r="2.2" class="dot"/>
+<circle cx="403.5" cy="110.9" r="2.2" class="dot"/>
+<text x="441.0" y="231" class="word">3. aabaB</text>
+<rect x="538" y="64" width="150" height="150" class="square"/>
+<path d="M538,64 L547.0,64.0 A9,9 0 0 1 538.0,73.0 Z" class="hole"/>
+<path d="M688,64 L688.0,73.0 A9,9 0 0 1 679.0,64.0 Z" class="hole"/>
+<path d="M688,214 L679.0,214.0 A9,9 0 0 1 688.0,205.0 Z" class="hole"/>
+<path d="M538,214 L538.0,205.0 A9,9 0 0 1 547.0,214.0 Z" class="hole"/>
+<path d="M638.0,64.0 L688.0,94.0" class="curve"/>
+<path d="M538.0,94.0 L688.0,154.0" class="curve"/>
+<path d="M538.0,154.0 L688.0,124.0" class="curve"/>
+<path d="M538.0,124.0 L588.0,64.0" class="curve"/>
+<path d="M588.0,214.0 L538.0,184.0" class="curve"/>
+<path d="M688.0,184.0 L638.0,214.0" class="curve"/>
+<circle cx="638.0" cy="134.0" r="2.2" class="dot"/>
+<circle cx="556.8" cy="101.5" r="2.2" class="dot"/>
+<text x="613.0" y="231" class="word">4. aaabAB</text>
+<rect x="710" y="64" width="150" height="150" class="square"/>
+<path d="M710,64 L719.0,64.0 A9,9 0 0 1 710.0,73.0 Z" class="hole"/>
+<path d="M860,64 L860.0,73.0 A9,9 0 0 1 851.0,64.0 Z" class="hole"/>
+<path d="M860,214 L851.0,214.0 A9,9 0 0 1 860.0,205.0 Z" class="hole"/>
+<path d="M710,214 L710.0,205.0 A9,9 0 0 1 719.0,214.0 Z" class="hole"/>
+<path d="M810.0,64.0 L860.0,94.0" class="curve"/>
+<path d="M710.0,94.0 L860.0,124.0" class="curve"/>
+<path d="M710.0,124.0 L760.0,64.0" class="curve"/>
+<path d="M760.0,214.0 L710.0,184.0" class="curve"/>
+<path d="M860.0,184.0 L710.0,154.0" class="curve"/>
+<path d="M860.0,154.0 L810.0,214.0" class="curve"/>
+<circle cx="731.4" cy="98.3" r="2.2" class="dot"/>
+<circle cx="838.6" cy="179.7" r="2.2" class="dot"/>
+<text x="785.0" y="231" class="word">5. aabAAB</text>
+<rect x="882" y="64" width="150" height="150" class="square"/>
+<path d="M882,64 L891.0,64.0 A9,9 0 0 1 882.0,73.0 Z" class="hole"/>
+<path d="M1032,64 L1032.0,73.0 A9,9 0 0 1 1023.0,64.0 Z" class="hole"/>
+<path d="M1032,214 L1023.0,214.0 A9,9 0 0 1 1032.0,205.0 Z" class="hole"/>
+<path d="M882,214 L882.0,205.0 A9,9 0 0 1 891.0,214.0 Z" class="hole"/>
+<path d="M1002.0,214.0 L1032.0,154.0" class="curve"/>
+<path d="M882.0,154.0 L1032.0,124.0" class="curve"/>
+<path d="M882.0,124.0 L942.0,64.0" class="curve"/>
+<path d="M942.0,214.0 L972.0,64.0" class="curve"/>
+<path d="M972.0,214.0 L1032.0,184.0" class="curve"/>
+<path d="M882.0,184.0 L912.0,214.0" class="curve"/>
+<path d="M912.0,64.0 L882.0,94.0" class="curve"/>
+<path d="M1032.0,94.0 L1002.0,64.0" class="curve"/>
+<circle cx="957.0" cy="139.0" r="2.2" class="dot"/>
+<circle cx="1012.0" cy="194.0" r="2.2" class="dot"/>
+<text x="957.0" y="231" class="word">6. aabbaBAb</text>
+<rect x="22" y="266" width="150" height="150" class="square"/>
+<path d="M22,266 L31.0,266.0 A9,9 0 0 1 22.0,275.0 Z" class="hole"/>
+<path d="M172,266 L172.0,275.0 A9,9 0 0 1 163.0,266.0 Z" class="hole"/>
+<path d="M172,416 L163.0,416.0 A9,9 0 0 1 172.0,407.0 Z" class="hole"/>
+<path d="M22,416 L22.0,407.0 A9,9 0 0 1 31.0,416.0 Z" class="hole"/>
+<path d="M112.0,266.0 L172.0,316.0" class="curve"/>
+<path d="M22.0,316.0 L172.0,341.0" class="curve"/>
+<path d="M22.0,341.0 L82.0,266.0" class="curve"/>
+<path d="M82.0,416.0 L22.0,366.0" class="curve"/>
+<path d="M172.0,366.0 L142.0,416.0" class="curve"/>
+<path d="M142.0,266.0 L172.0,291.0" class="curve"/>
+<path d="M22.0,291.0 L52.0,266.0" class="curve"/>
+<path d="M52.0,416.0 L22.0,391.0" class="curve"/>
+<path d="M172.0,391.0 L112.0,416.0" class="curve"/>
+<circle cx="39.6" cy="318.9" r="2.2" class="dot"/>
+<circle cx="152.0" cy="399.3" r="2.2" class="dot"/>
+<text x="97.0" y="433" class="word">7. aabABabAB</text>
+<rect x="194" y="266" width="150" height="150" class="square"/>
+<path d="M194,266 L203.0,266.0 A9,9 0 0 1 194.0,275.0 Z" class="hole"/>
+<path d="M344,266 L344.0,275.0 A9,9 0 0 1 335.0,266.0 Z" class="hole"/>
+<path d="M344,416 L335.0,416.0 A9,9 0 0 1 344.0,407.0 Z" class="hole"/>
+<path d="M194,416 L194.0,407.0 A9,9 0 0 1 203.0,416.0 Z" class="hole"/>
+<path d="M322.6,266.0 L344.0,330.3" class="curve"/>
+<path d="M194.0,330.3 L258.3,266.0" class="curve"/>
+<path d="M258.3,416.0 L194.0,351.7" class="curve"/>
+<path d="M344.0,351.7 L279.7,416.0" class="curve"/>
+<path d="M279.7,266.0 L344.0,308.9" class="curve"/>
+<path d="M194.0,308.9 L236.9,266.0" class="curve"/>
+<path d="M236.9,416.0 L194.0,373.1" class="curve"/>
+<path d="M344.0,373.1 L301.1,416.0" class="curve"/>
+<path d="M301.1,266.0 L344.0,287.4" class="curve"/>
+<path d="M194.0,287.4 L215.4,266.0" class="curve"/>
+<path d="M215.4,416.0 L194.0,394.6" class="curve"/>
+<path d="M344.0,394.6 L322.6,416.0" class="curve"/>
+<circle cx="334.8" cy="302.7" r="2.2" class="dot"/>
+<circle cx="326.9" cy="278.9" r="2.2" class="dot"/>
+<text x="269.0" y="433" class="word">8. abABabABabAB</text>
+</svg>

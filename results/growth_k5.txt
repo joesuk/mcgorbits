@@ -1,0 +1,55 @@
+5 self-intersections, 53 primitive orbits, lengths up to 60
+  AAABBab                p = 4      c(l) = 8phi(l-4)   for l >= 8
+  AABBaab                p = 2      c(l) = 4phi(l-4)   for l >= 8
+  AAAAAABB               NO FORMULA FOUND   classes 1062, crude p ~ 0.49
+  AAAAABAb               p = 1/18   c(l) = 4phi((l)/6)   for l >= 9
+  AAAABAAb               p = 1/18   c(l) = 4phi((l)/6)   for l >= 9
+  AAABAAAb               p = 1/36   c(l) = 2phi((l)/6)   for l >= 9
+  AAABBABB               NO FORMULA FOUND   classes 1050, crude p ~ 0.48
+  AABAbABB               p = 3/2    c(l) = 8phi((l-4)/2) + 4phi((l)/2)   for l >= 9
+  AAAAAABab              p = 2/25   c(l) = 4phi((l-4)/5)   for l >= 9
+  AAAAABaab              p = 2/25   c(l) = 4phi((l-4)/5)   for l >= 9
+  AAAABaaab              p = 2/25   c(l) = 4phi((l-4)/5)   for l >= 9
+  AAABAbaBB              NO FORMULA FOUND   classes 2500, crude p ~ 1.14
+  AAABAbbaB              NO FORMULA FOUND   classes 2500, crude p ~ 1.14
+  AABBAABab              p = 4      c(l) = 8phi(l-4)   for l >= 10
+  AABabaBab              p = 2/9    c(l) = 4phi((l-4)/3)   for l >= 10
+  AAAABabbaB             p = 1      c(l) = 4phi((l-8)/2) + 4phi((l-4)/2)   for l >= 11
+  AAABAbaBab             p = 1/4    c(l) = 8phi((l-4)/4)   for l >= 11
+  AAABBBAbaB             NO FORMULA FOUND   classes 2324, crude p ~ 1.06
+  AABAAbaBab             p = 1/8    c(l) = 4phi((l-4)/4)   for l >= 11
+  AABAbaBAbb             p = 4      c(l) = 4phi(l-8) + 4phi(l-4)   for l >= 11
+  AABAbaBaab             p = 1/8    c(l) = 4phi((l-4)/4)   for l >= 11
+  AABAbbABab             p = 4      c(l) = 4phi(l-8) + 4phi(l-4)   for l >= 11
+  AABBAbABab             p = 4      c(l) = 4phi(l-8) + 4phi(l-4)   for l >= 11
+  AAAAABBAbaB            NO FORMULA FOUND   classes 2420, crude p ~ 1.11
+  AAAABAbABab            p = 4/25   c(l) = 8phi((l-4)/5)   for l >= 12
+  AAAABAbaBAb            p = 2/25   c(l) = 4phi((l-4)/5)   for l >= 12
+  AAABAAbABab            p = 4/25   c(l) = 8phi((l-4)/5)   for l >= 12
+  AAABAAbaBAb            p = 4/25   c(l) = 8phi((l-4)/5)   for l >= 12
+  AAAAABabABab           p = 1/8    c(l) = 4phi((l-8)/4)   for l >= 12
+  AAAABaabABab           p = 1/4    c(l) = 8phi((l-8)/4)   for l >= 12
+  AAABaaabABab           p = 1/8    c(l) = 4phi((l-8)/4)   for l >= 12
+  AABAbaBAbaBB           p = 2      c(l) = 16phi((l-8)/2)   for l >= 13
+  AABAbaBAbbaB           p = 2      c(l) = 16phi((l-8)/2)   for l >= 13
+  AABabABBAbaB           p = 1/4    c(l) = 2phi((l-8)/2)   for l >= 13
+  AAABabABabbaB          p = 4      c(l) = 4phi(l-12) + 4phi(l-8)   for l >= 14
+  AABAbaBAbaBab          p = 4/9    c(l) = 8phi((l-8)/3)   for l >= 14
+  AABAbaBabABab          p = 4/9    c(l) = 8phi((l-8)/3)   for l >= 14
+  AAAABBAbaBAbaB         p = 2      c(l) = 8phi((l-12)/2) + 8phi((l-8)/2)   for l >= 15
+  AAABAbABabABab         p = 1/4    c(l) = 8phi((l-8)/4)   for l >= 15
+  AAABAbaBAbaBAb         p = 1/8    c(l) = 4phi((l-8)/4)   for l >= 15
+  AABAAbABabABab         p = 1/4    c(l) = 8phi((l-8)/4)   for l >= 15
+  AABBabABabABab         p = 4      c(l) = 8phi(l-12)   for l >= 15
+  AABabABabABBab         p = 4      c(l) = 8phi(l-12)   for l >= 15
+  AAAABabABabABab        p = 2/9    c(l) = 4phi((l-12)/3)   for l >= 15
+  AAABaabABabABab        p = 4/9    c(l) = 8phi((l-12)/3)   for l >= 15
+  AABabABabABabbaB       p = 1/2    c(l) = 4phi((l-12)/2)   for l >= 17
+  AAABBAbaBAbaBAbaB      p = 4      c(l) = 4phi(l-16) + 4phi(l-12)   for l >= 18
+  AABAbABabABabABab      p = 4/9    c(l) = 8phi((l-12)/3)   for l >= 18
+  AABAbaBAbaBAbaBAb      p = 2/9    c(l) = 4phi((l-12)/3)   for l >= 18
+  AAABabABabABabABab     p = 1/2    c(l) = 4phi((l-16)/2)   for l >= 18
+  AABaabABabABabABab     p = 1/2    c(l) = 4phi((l-16)/2)   for l >= 18
+  AABBAbaBAbaBAbaBAbaB   p = 1/2    c(l) = 4phi((l-16)/2)   for l >= 21
+  AABabABabABabABabABab  p = 2      c(l) = 4phi(l-20)   for l >= 21
+sum of p = 6691/120 = 55.7583; orbits = 53; difference = +2.7583; 6 orbit(s) without a formula

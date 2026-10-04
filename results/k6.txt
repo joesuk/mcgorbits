@@ -1,0 +1,122 @@
+k = 6, all words up to length 28: 2018 minimal classes (4276840 prefixes visited)
+
+all homeomorphisms, unoriented curves: 109 orbits, 107 primitive
+  orbits by length of shortest word: {7: 6, 8: 2, 9: 9, 10: 14, 11: 10, 12: 11, 13: 14, 14: 12, 15: 5, 16: 6, 17: 3, 18: 6, 19: 2, 20: 1, 21: 3, 22: 2, 24: 1, 25: 1, 28: 1}
+    AAAAAAA
+    AAAABBB
+    AAABAbb
+    AAABBaB
+    AABAAbb
+    AABBAbb
+    AABABBab
+    AABBabab
+    AAAAAAABB
+    AAAAAABAb
+    AAAAABAAb
+    AAAABAAAb
+    AAABAbABB
+    AAABAbbAB
+    AAABBAABB
+    AABAbABAb
+    AABBAbaab
+    AAAAAAABab
+    AAAAAABaab
+    AAAAABaaab
+    AAAABAbaBB
+    AAAABAbbaB
+    AAAABaaaab
+    AAABBAAbaB
+    AAABabaBab
+    AAABabbbaB
+    AABAbAABab
+    AABAbABaab
+    AABAbaBBab
+    AABAbaaBAb
+    AABBAbaBab
+    AAAAABabbaB
+    AAAABAbaBab
+    AAABAAbaBab
+    AAABAbaBaab
+    AAABBabABab
+    AAABabAABab
+    AAABabABBab
+    AABBaabABab
+    AABBabABaab
+    AABaabAABab
+    AAAAAABBAbaB
+    AAAAABAbABab
+    AAAAABAbaBAb
+    AAAABAAbABab
+    AAAABAAbaBAb
+    AAABAAAbABab
+    AAABBABBAbaB
+    AABAbABBAbaB
+    AABAbABabABB
+    AABBAABBAbaB
+    AABBAbaabbaB
+    AAAAAABabABab
+    AAAAABaabABab
+    AAAABaaabABab
+    AAABAbaBAbaBB
+    AAABAbaBAbbaB
+    AAABAbaBBAbaB
+    AAABAbbaBAbaB
+    AAABabABBAbaB
+    AABAbaBAbABab
+    AABBAABabABab
+    AABBAbaBAAbaB
+    AABabABAbABab
+    AABabABabaBab
+    AABabaBAbaBab
+    AAAABabABabbaB
+    AAABAbaBAbaBab
+    AAABAbaBabABab
+    AAABBBAbaBAbaB
+    AABAAbaBAbaBab
+    AABAbaBAbaBAbb
+    AABAbaBAbaBaab
+    AABAbaBaabABab
+    AABAbbABabABab
+    AABBAbABabABab
+    AABabAABabABab
+    AABabABaabABab
+    AAAAABBAbaBAbaB
+    AAAABAbABabABab
+    AAAABAbaBAbaBAb
+    AAABAAbABabABab
+    AAABAAbaBAbaBAb
+    AAAAABabABabABab
+    AAAABaabABabABab
+    AAABaaabABabABab
+    AABAbaBAbaBAbaBB
+    AABAbaBAbaBAbbaB
+    AABabABBAbaBAbaB
+    AAABabABabABabbaB
+    AABAbaBAbaBAbaBab
+    AABAbaBabABabABab
+    AAAABBAbaBAbaBAbaB
+    AAABAbABabABabABab
+    AAABAbaBAbaBAbaBAb
+    AABAAbABabABabABab
+    AABBabABabABabABab
+    AABabABabABabABBab
+    AAAABabABabABabABab
+    AAABaabABabABabABab
+    AABabABabABabABabbaB
+    AAABBAbaBAbaBAbaBAbaB
+    AABAbABabABabABabABab
+    AABAbaBAbaBAbaBAbaBAb
+    AAABabABabABabABabABab
+    AABaabABabABabABabABab
+    AABBAbaBAbaBAbaBAbaBAbaB
+    AABabABabABabABabABabABab
+    ABabABabABabABabABabABabABab
+
+all homeomorphisms, oriented curves: 149 orbits, 147 primitive
+  orbits by length of shortest word: {7: 8, 8: 2, 9: 10, 10: 18, 11: 16, 12: 16, 13: 20, 14: 18, 15: 8, 16: 7, 17: 5, 18: 8, 19: 3, 20: 1, 21: 4, 22: 2, 24: 1, 25: 1, 28: 1}
+
+orientation-preserving, unoriented curves: 152 orbits, 150 primitive
+  orbits by length of shortest word: {7: 10, 8: 2, 9: 11, 10: 18, 11: 16, 12: 16, 13: 20, 14: 18, 15: 8, 16: 7, 17: 5, 18: 8, 19: 3, 20: 1, 21: 4, 22: 2, 24: 1, 25: 1, 28: 1}
+
+orientation-preserving, oriented curves: 292 orbits, 289 primitive
+  orbits by length of shortest word: {7: 15, 8: 4, 9: 18, 10: 35, 11: 31, 12: 32, 13: 39, 14: 36, 15: 16, 16: 14, 17: 10, 18: 16, 19: 6, 20: 2, 21: 8, 22: 4, 24: 2, 25: 2, 28: 2}

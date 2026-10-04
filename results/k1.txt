@@ -1,0 +1,17 @@
+k = 1, all words up to length 8: 22 minimal classes (1125 prefixes visited)
+
+all homeomorphisms, unoriented curves: 4 orbits, 2 primitive
+  orbits by length of shortest word: {2: 1, 4: 1, 5: 1, 8: 1}
+    AA
+    AABB
+    AABab
+    ABabABab
+
+all homeomorphisms, oriented curves: 4 orbits, 2 primitive
+  orbits by length of shortest word: {2: 1, 4: 1, 5: 1, 8: 1}
+
+orientation-preserving, unoriented curves: 4 orbits, 2 primitive
+  orbits by length of shortest word: {2: 1, 4: 1, 5: 1, 8: 1}
+
+orientation-preserving, oriented curves: 6 orbits, 3 primitive
+  orbits by length of shortest word: {2: 1, 4: 1, 5: 2, 8: 2}

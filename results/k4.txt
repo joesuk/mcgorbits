@@ -1,0 +1,42 @@
+k = 4, all words up to length 20: 390 minimal classes (321537 prefixes visited)
+
+all homeomorphisms, unoriented curves: 29 orbits, 27 primitive
+  orbits by length of shortest word: {5: 1, 6: 2, 7: 3, 8: 4, 9: 2, 10: 6, 11: 2, 12: 1, 13: 3, 14: 2, 16: 1, 17: 1, 20: 1}
+    AAAAA
+    AAABBB
+    AABAbb
+    AAAAABB
+    AAAABAb
+    AAABAAb
+    AAAAABab
+    AAAABaab
+    AAABaaab
+    AABAbaBB
+    AAABabbaB
+    AABAbaBab
+    AAAABBAbaB
+    AAABAbABab
+    AAABAbaBAb
+    AABAAbABab
+    AABBabABab
+    AABabABBab
+    AAAABabABab
+    AAABaabABab
+    AABabABabbaB
+    AAABBAbaBAbaB
+    AABAbABabABab
+    AABAbaBAbaBAb
+    AAABabABabABab
+    AABaabABabABab
+    AABBAbaBAbaBAbaB
+    AABabABabABabABab
+    ABabABabABabABabABab
+
+all homeomorphisms, oriented curves: 35 orbits, 33 primitive
+  orbits by length of shortest word: {5: 1, 6: 3, 7: 3, 8: 4, 9: 3, 10: 8, 11: 3, 12: 1, 13: 4, 14: 2, 16: 1, 17: 1, 20: 1}
+
+orientation-preserving, unoriented curves: 35 orbits, 33 primitive
+  orbits by length of shortest word: {5: 1, 6: 3, 7: 3, 8: 4, 9: 3, 10: 8, 11: 3, 12: 1, 13: 4, 14: 2, 16: 1, 17: 1, 20: 1}
+
+orientation-preserving, oriented curves: 66 orbits, 63 primitive
+  orbits by length of shortest word: {5: 1, 6: 5, 7: 5, 8: 8, 9: 5, 10: 16, 11: 6, 12: 2, 13: 8, 14: 4, 16: 2, 17: 2, 20: 2}

@@ -1,0 +1,3 @@
+0 self-intersections, 1 primitive orbits, lengths up to 60
+  A                      p = 1      c(l) = 2phi(l)   for l >= 1
+sum of p = 1 = 1.0000; orbits = 1; difference = +0.0000

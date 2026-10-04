@@ -1,0 +1,29 @@
+4 self-intersections, 27 primitive orbits, lengths up to 60
+  AAABBB                 NO FORMULA FOUND   classes 1402, crude p ~ 0.64
+  AABAbb                 p = 4      c(l) = 4phi(l-4) + 4phi(l)   for l >= 7
+  AAAAABB                NO FORMULA FOUND   classes 1334, crude p ~ 0.61
+  AAAABAb                p = 2/25   c(l) = 4phi((l)/5)   for l >= 8
+  AAABAAb                p = 2/25   c(l) = 4phi((l)/5)   for l >= 8
+  AAAAABab               p = 1/8    c(l) = 4phi((l-4)/4)   for l >= 8
+  AAAABaab               p = 1/8    c(l) = 4phi((l-4)/4)   for l >= 8
+  AAABaaab               p = 1/16   c(l) = 2phi((l-4)/4)   for l >= 8
+  AABAbaBB               p = 2      c(l) = 16phi((l-4)/2)   for l >= 9
+  AAABabbaB              p = 2      c(l) = 2phi(l-8) + 2phi(l-4)   for l >= 10
+  AABAbaBab              p = 4/9    c(l) = 8phi((l-4)/3)   for l >= 10
+  AAAABBAbaB             p = 2      c(l) = 8phi((l-8)/2) + 8phi((l-4)/2)   for l >= 11
+  AAABAbABab             p = 1/4    c(l) = 8phi((l-4)/4)   for l >= 11
+  AAABAbaBAb             p = 1/8    c(l) = 4phi((l-4)/4)   for l >= 11
+  AABAAbABab             p = 1/4    c(l) = 8phi((l-4)/4)   for l >= 11
+  AABBabABab             p = 4      c(l) = 8phi(l-8)   for l >= 11
+  AABabABBab             p = 4      c(l) = 8phi(l-8)   for l >= 11
+  AAAABabABab            p = 2/9    c(l) = 4phi((l-8)/3)   for l >= 11
+  AAABaabABab            p = 4/9    c(l) = 8phi((l-8)/3)   for l >= 11
+  AABabABabbaB           p = 1/2    c(l) = 4phi((l-8)/2)   for l >= 13
+  AAABBAbaBAbaB          p = 4      c(l) = 4phi(l-12) + 4phi(l-8)   for l >= 14
+  AABAbABabABab          p = 4/9    c(l) = 8phi((l-8)/3)   for l >= 14
+  AABAbaBAbaBAb          p = 2/9    c(l) = 4phi((l-8)/3)   for l >= 14
+  AAABabABabABab         p = 1/2    c(l) = 4phi((l-12)/2)   for l >= 14
+  AABaabABabABab         p = 1/2    c(l) = 4phi((l-12)/2)   for l >= 14
+  AABBAbaBAbaBAbaB       p = 1/2    c(l) = 4phi((l-12)/2)   for l >= 17
+  AABabABabABabABab      p = 2      c(l) = 4phi(l-16)   for l >= 17
+sum of p = 103951/3600 = 28.8753; orbits = 27; difference = +1.8753; 2 orbit(s) without a formula

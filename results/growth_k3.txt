@@ -1,0 +1,16 @@
+3 self-intersections, 14 primitive orbits, lengths up to 60
+  AAAABB                 p = 1      c(l) = 4phi((l-4)/2) + 4phi((l)/2)   for l >= 7
+  AAABAb                 p = 1/8    c(l) = 4phi((l)/4)   for l >= 7
+  AABAAb                 p = 1/16   c(l) = 2phi((l)/4)   for l >= 7
+  AABBab                 p = 4      c(l) = 8phi(l-4)   for l >= 7
+  AAAABab                p = 2/9    c(l) = 4phi((l-4)/3)   for l >= 7
+  AAABaab                p = 2/9    c(l) = 4phi((l-4)/3)   for l >= 7
+  AABabbaB               p = 1/4    c(l) = 2phi((l-4)/2)   for l >= 9
+  AAABBAbaB              p = 4      c(l) = 4phi(l-8) + 4phi(l-4)   for l >= 10
+  AABAbABab              p = 4/9    c(l) = 8phi((l-4)/3)   for l >= 10
+  AABAbaBAb              p = 2/9    c(l) = 4phi((l-4)/3)   for l >= 10
+  AAABabABab             p = 1/2    c(l) = 4phi((l-8)/2)   for l >= 10
+  AABaabABab             p = 1/2    c(l) = 4phi((l-8)/2)   for l >= 10
+  AABBAbaBAbaB           p = 1/2    c(l) = 4phi((l-8)/2)   for l >= 13
+  AABabABabABab          p = 2      c(l) = 4phi(l-12)   for l >= 13
+sum of p = 2023/144 = 14.0486; orbits = 14; difference = +0.0486

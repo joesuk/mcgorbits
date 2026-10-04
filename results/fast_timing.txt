@@ -1,0 +1,14 @@
+  k  orbits  primitive  seconds  check against bruteforce.py
+  0       2          2      0.0  same orbits
+  1       4          2      0.0  same orbits
+  2       8          6      0.1  same orbits
+  3      16         14      0.2  same orbits
+  4      29         27      0.3  same orbits
+  5      57         53      0.7  same orbits
+  6     109        107      1.2  same orbits
+  7     204        202      2.5  same orbits
+  8     369        367      6.0  same orbits
+  9     669        661     15.9  same orbits
+ 10    1179       1177     48.8  same orbits
+ 11    2081       2077    113.2  -
+ 12    3602       3600    267.7  -

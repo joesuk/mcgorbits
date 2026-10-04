@@ -1,0 +1,8 @@
+AAA
+AAABB
+AABAb
+AAABab
+AABaab
+AABBAbaB
+AABabABab
+ABabABabABab

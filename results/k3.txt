@@ -1,0 +1,29 @@
+k = 3, all words up to length 16: 166 minimal classes (65836 prefixes visited)
+
+all homeomorphisms, unoriented curves: 16 orbits, 14 primitive
+  orbits by length of shortest word: {4: 1, 6: 4, 7: 2, 8: 1, 9: 3, 10: 2, 12: 1, 13: 1, 16: 1}
+    AAAA
+    AAAABB
+    AAABAb
+    AABAAb
+    AABBab
+    AAAABab
+    AAABaab
+    AABabbaB
+    AAABBAbaB
+    AABAbABab
+    AABAbaBAb
+    AAABabABab
+    AABaabABab
+    AABBAbaBAbaB
+    AABabABabABab
+    ABabABabABabABab
+
+all homeomorphisms, oriented curves: 17 orbits, 15 primitive
+  orbits by length of shortest word: {4: 1, 6: 4, 7: 2, 8: 1, 9: 4, 10: 2, 12: 1, 13: 1, 16: 1}
+
+orientation-preserving, unoriented curves: 17 orbits, 15 primitive
+  orbits by length of shortest word: {4: 1, 6: 4, 7: 2, 8: 1, 9: 4, 10: 2, 12: 1, 13: 1, 16: 1}
+
+orientation-preserving, oriented curves: 30 orbits, 27 primitive
+  orbits by length of shortest word: {4: 1, 6: 6, 7: 4, 8: 1, 9: 8, 10: 4, 12: 2, 13: 2, 16: 2}

@@ -1,0 +1,4 @@
+1 self-intersections, 2 primitive orbits, lengths up to 60
+  AABB                   p = 1/4    c(l) = 2phi((l)/2)   for l >= 5
+  AABab                  p = 2      c(l) = 4phi(l-4)   for l >= 5
+sum of p = 9/4 = 2.2500; orbits = 2; difference = +0.2500

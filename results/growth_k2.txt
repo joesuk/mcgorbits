@@ -1,0 +1,8 @@
+2 self-intersections, 6 primitive orbits, lengths up to 60
+  AAABB                  p = 2      c(l) = 2phi(l-4) + 2phi(l)   for l >= 6
+  AABAb                  p = 2/9    c(l) = 4phi((l)/3)   for l >= 6
+  AAABab                 p = 1/2    c(l) = 4phi((l-4)/2)   for l >= 6
+  AABaab                 p = 1/4    c(l) = 2phi((l-4)/2)   for l >= 6
+  AABBAbaB               p = 1/2    c(l) = 4phi((l-4)/2)   for l >= 9
+  AABabABab              p = 2      c(l) = 4phi(l-8)   for l >= 9
+sum of p = 197/36 = 5.4722; orbits = 6; difference = -0.5278
