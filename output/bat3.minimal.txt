@@ -1,0 +1,91 @@
+aaa : 
+aaaabAB : true
+aabaBAbaB : true
+aabABabaB : true
+aabaBabAB : true
+
+ : 
+aabAABabAB : true
+baBAbaBAbaBAbaBA : true
+abABabABabABabAB : true
+abaBAbAB : true
+
+aa : 
+abaBAbaBAbaB : true
+aaabABabAB : true
+
+a : 
+aaabAAB : true
+aabABabABabAB : true
+
+ab : 
+aabbAB : true
+aabAbaBAb : true
+
+aaaabb : 
+aaaabb : true
+
+aaaa : 
+aaabaB : true
+aabaaB : true
+aaaa : true
+
+7
+
+aaaabAB : true
+aabAABabAB : true
+aaabAAB : true
+aaabaB : true
+aabbAB : true
+aaaabb : true
+aabaaB : true
+abaBAbaBAbaB : true
+aabaBAbaB : true
+aaaa : true
+baBAbaBAbaBAbaBA : true
+aaabABabAB : true
+aabABabaB : true
+abABabABabABabAB : true
+aabAbaBAb : true
+aabABabABabAB : true
+aabaBabAB : true
+abaBAbAB : true
+
+FINAL COUNT: 17
+
+bbaBAbb
+AbaBAbaaBA
+AbbaBBB
+babAbb
+bbAABa
+BaaBAA
+abbAbb
+aBAbABAbaBAb
+bABabaaBa
+aaaa
+ABabABabABabABab
+baBAbaBAbb
+aBAbABAAb
+bbABabABA
+AbaBBAbaBAbaB
+BABaBAbaB
+ABAbaBab
+
+
+aaaa
+babAbb
+bbAABa
+BaaBAA
+abbAbb
+bbaBAbb
+AbbaBBB
+ABAbaBab
+bABabaaBa
+aBAbABAAb
+bbABabABA
+BABaBAbaB
+AbaBAbaaBA
+baBAbaBAbb
+aBAbABAbaBAb
+AbaBBAbaBAbaB
+ABabABabABabABab

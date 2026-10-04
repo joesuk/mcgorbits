@@ -1,0 +1,116 @@
+
+AAAA : 4
+
+aaaa : 4
+
+AbbaBA : 6
+
+aabbAB : 6
+
+aabaaB : 6
+
+AbABAA : 6
+
+baBBAA : 6
+
+abaaBa : 6
+
+aaBAAB : 6
+
+aabAAb : 6
+
+bAABAA : 6
+
+AbAABA : 6
+
+BaaBAA : 6
+
+abABBa : 6
+
+aabaBa : 6
+
+baabAA : 6
+
+aabAABa : 7
+
+AbaaBAA : 7
+
+ababAAB : 7
+
+aabAbAB : 7
+
+baBaBAA : 7
+
+aaabABa : 7
+
+AbaBABA : 7
+
+baaBABA : 7
+
+ababABa : 7
+
+AbaBAAA : 7
+
+bABabABAA : 9
+
+baBAbABAA : 9
+
+AbaBAbABA : 9
+
+abbaBAbaB : 9
+
+bABabABBA : 9
+
+bABAbaBAA : 9
+
+aabABabaB : 9
+
+baBAbbABA : 9
+
+aabaBAbaB : 9
+
+abaBBabAB : 9
+
+abaBabABa : 9
+
+aabaBabAB : 9
+
+aabAABabAB : 10
+
+aabABabABa : 10
+
+baBAbaaBAA : 10
+
+baaBAbaBAA : 10
+
+baBAbaBAAA : 10
+
+AbaBAbaBAA : 10
+
+abaBAbaBAB : 10
+
+babABabABA : 10
+
+aabABabAAB : 10
+
+aaabABabAB : 10
+
+baBAbabABA : 10
+
+abaBABabAB : 10
+
+abaBAbaBAbaB : 12
+
+bABabABabABA : 12
+
+baBAbaBAbABA : 12
+
+abaBabABabAB : 12
+
+aabABabABabAB : 13
+
+baBAbaBAbaBAA : 13
+
+abABabABabABabAB : 16
+
+baBAbaBAbaBAbaBA : 16

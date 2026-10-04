@@ -1,0 +1,284 @@
+
+aaaaa : 5
+
+AAAAA : 5
+
+abaaBB : 6
+
+bbAABA : 6
+
+bAABAb : 6
+
+BabaaB : 6
+
+aabaBB : 6
+
+bbABAA : 6
+
+bbAbABA : 7
+
+aabAbaB : 7
+
+bbABAbA : 7
+
+bbABBAb : 7
+
+baBabbA : 7
+
+bAABaBA : 7
+
+aabAbab : 7
+
+aaBAABa : 7
+
+AAbAABA : 7
+
+AbAABAA : 7
+
+BABaBAA : 7
+
+BabbaBB : 7
+
+ababbaB : 7
+
+aBabaBB : 7
+
+aabaBAB : 7
+
+AbaabAA : 7
+
+aabaBaa : 7
+
+bABBABA : 7
+
+aabaaBa : 7
+
+aBBAbAB : 7
+
+AAbABAA : 7
+
+BaaaBAA : 7
+
+babABAA : 7
+
+aBABABa : 7
+
+bABaBAA : 7
+
+abaaBAB : 7
+
+abaaBaa : 7
+
+bABBBAb : 7
+
+babAABA : 7
+
+BabbbaB : 7
+
+abaBaBB : 7
+
+abaBABa : 7
+
+aabAAAb : 7
+
+AbabABA : 7
+
+AbababA : 7
+
+abAbaaB : 7
+
+BabAbABA : 8
+
+AAbaBAAA : 8
+
+abaBaBAb : 8
+
+bABaaBAA : 8
+
+aaabABaa : 8
+
+aaabAAAB : 8
+
+abaBAbAb : 8
+
+AAbaaBAA : 8
+
+aabAbbAB : 8
+
+AbaBABBA : 8
+
+aabAABaa : 8
+
+aabAAbaB : 8
+
+baaaBAAA : 8
+
+abbabABa : 8
+
+BaBabABA : 8
+
+baBBaBAA : 8
+
+bABabaaBA : 9
+
+baBBabABA : 9
+
+abABAbaBa : 9
+
+abaBABBAB : 9
+
+abaBAbbAB : 9
+
+babbabABA : 9
+
+AbaBabABA : 9
+
+abaBAbABa : 9
+
+aabABAbaB : 9
+
+aBabABBAb : 9
+
+AbABabaBA : 9
+
+bABabaBAA : 9
+
+BAbabABAA : 9
+
+abAABAbaB : 9
+
+baBabABAA : 9
+
+BabbaBAbA : 9
+
+aabaBAbAB : 9
+
+aabaBABab : 9
+
+baBAbABAAA : 10
+
+BABAbabABA : 10
+
+AbABabABAA : 10
+
+aabaBAbaBa : 10
+
+AbAABabABA : 10
+
+abbbaBAbaB : 10
+
+baBAbaBBAA : 10
+
+abaBABabab : 10
+
+baaBAbaBBA : 10
+
+baBAbbaaBA : 10
+
+aBAbbaBAba : 10
+
+abbaBBabAB : 10
+
+aaabaBabAB : 10
+
+ABabABBabA : 10
+
+abbABabAAB : 10
+
+abaBAbaaBa : 10
+
+abAABBabAB : 10
+
+baBabABaBA : 10
+
+bAABAbaBAA : 10
+
+aabABabaaB : 10
+
+aabbABabAB : 10
+
+baBAbbABBA : 10
+
+abAbaBAbAB : 10
+
+bABabABBBA : 10
+
+aaabAABabAB : 11
+
+aabABabABaB : 11
+
+AAbaBAbaBAA : 11
+
+baBAbaaBAAA : 11
+
+aabABabABaa : 11
+
+bAbaBAbaBAA : 11
+
+baBAbabaBAA : 11
+
+aaabABabABa : 11
+
+aabABABabAB : 11
+
+AbaBAbaBAAA : 11
+
+BababABabAA : 11
+
+aaBAbaBABAb : 11
+
+abaBAbABabAB : 12
+
+bABabABabaBA : 12
+
+baBAbaBabABA : 12
+
+abABAbaBAbaB : 12
+
+aabaBAbaBAbaB : 13
+
+baBAbaBAbbABA : 13
+
+abaBBabABabAB : 13
+
+bABabABabABAA : 13
+
+abaBabABabABa : 13
+
+AbaBAbaBAbABA : 13
+
+baBAbaBAbABBA : 13
+
+abbaBabABabAB : 13
+
+aaabABabABabAB : 14
+
+aabABabABabABa : 14
+
+AbaBAbaBAbaBAA : 14
+
+baaBAbaBAbaBAA : 14
+
+baBAbaBAbaBAAA : 14
+
+aabABabABabAAB : 14
+
+babABabABabABA : 14
+
+abaBAbaBAbaBAB : 14
+
+abaBAbaBAbaBAbaB : 16
+
+abaBabABabABabAB : 16
+
+bABabABabABabABA : 16
+
+baBAbaBAbaBAbABA : 16
+
+aabABabABabABabAB : 17
+
+baBAbaBAbaBAbaBAA : 17
+
+abABabABabABabABabAB : 20
+
+baBAbaBAbaBAbaBAbaBA : 20

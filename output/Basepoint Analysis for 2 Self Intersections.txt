@@ -1,0 +1,52 @@
+
+aaa : 3
+
+AAA : 3
+
+bABBA : 5
+
+aabaB : 5
+
+bbABA : 5
+
+AbABA : 5
+
+bABAA : 5
+
+abaBB : 5
+
+abbaB : 5
+
+abaBa : 5
+
+aabABa : 6
+
+abaBAB : 6
+
+baaBAA : 6
+
+AbaBAA : 6
+
+babABA : 6
+
+aaabAB : 6
+
+aabAAB : 6
+
+baBAAA : 6
+
+baBAbABA : 8
+
+bABabABA : 8
+
+abaBAbaB : 8
+
+abaBabAB : 8
+
+baBAbaBAA : 9
+
+aabABabAB : 9
+
+abABabABabAB : 12
+
+baBAbaBAbaBA : 12

@@ -1,0 +1,71 @@
+ABA : 
+bABBA : true
+
+AA : 
+baBAbABA : true
+baBAAA : true
+bABabABA : true
+AbaBAA : true
+
+ : 
+baBAbaBAbaBA : true
+baaBAA : true
+
+aa : 
+aabABa : true
+
+aaa : 
+abaBa : true
+
+AAA : 
+bABAA : true
+AAA : true
+AbABA : true
+
+A : 
+baBAbaBAA : true
+
+bAA : 
+bbABA : true
+
+bA : 
+babABA : AAbab
+
+9
+
+bABAA : true
+AAA : true
+bABBA : true
+babABA : AAbab
+baBAbABA : true
+baBAAA : true
+bABabABA : true
+bbABA : true
+baBAbaBAbaBA : true
+aabABa : true
+baBAbaBAA : true
+abaBa : true
+AbABA : true
+baaBAA : true
+AbaBAA : true
+
+FINAL COUNT: 8
+
+bABAA
+aaa
+Abaab
+AbbABabA
+AABabA
+baBAbaBAbaBA
+BAbbaBAba
+bABBab
+
+
+aaa
+bABAA
+Abaab
+AABabA
+bABBab
+AbbABabA
+BAbbaBAba
+baBAbaBAbaBA

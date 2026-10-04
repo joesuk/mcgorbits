@@ -1,0 +1,64 @@
+aaaaa : 5
+
+BabaaB : 6
+
+abaaBAB : 7
+
+abAbaaB : 7
+
+aBABABa : 7
+
+BabbaBB : 7
+
+aabaBaa : 7
+
+aabaaBa : 7
+
+aabAAAb : 7
+
+aBabaBB : 7
+
+abaabAb : 7
+
+abAbaab : 7
+
+aaabABaa : 8
+
+aabAABaa : 8
+
+abbabABa : 8
+
+aaabAAAB : 8
+
+abaBAbABa : 9
+
+abABAbaBa : 9
+
+aBAbbaBAba : 10
+
+aabaBAbaBa : 10
+
+aaabaBabAB : 10
+
+abaBAbaaBa : 10
+
+aaabABabABa : 11
+
+aaabAABabAB : 11
+
+abABAbaBAbaB : 12
+
+aabaBAbaBAbaB : 13
+
+abaBabABabABa : 13
+
+abbaBabABabAB : 13
+
+aaabABabABabAB : 14
+
+aabABabABabAAB : 14
+
+aabABabABabABabAB : 17
+
+abABabABabABabABabAB : 20
+32

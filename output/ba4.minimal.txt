@@ -1,0 +1,385 @@
+ : 
+baaBAbaBAbaBAA : true
+bABabABabaBA : true
+baBAbaBabABA : true
+abABAbaBAbaB : true
+baBAbaBAbaBAbaBAbaBA : true
+baaaBAAA : true
+
+bbA : 
+AbaabAA : true
+babABabABabABA : ABabABabAAbab
+
+BAAA : 
+BABAbabABA : AbabAAA
+
+aB : 
+baaBAbaBBA : true
+
+aBa : 
+abaBABa : aBBaab
+
+bAA : 
+bbABBAb : true
+bAbaBAbaBAA : aBAbaBAAbb
+babABAA : ABAAbb
+babAABA : AABAbb
+AbabABA : bABAAb
+
+BBB : 
+aBABABa : BBBaaa
+
+baa : 
+abAbaaB : baaBab
+
+aaaB : 
+abaaBB : true
+BabaaB : true
+
+baab : 
+abbaBabABabAB : true
+
+baba : 
+abbabABa : true
+
+bA : 
+abbABabAAB : true
+
+AA : 
+BabAbABA : true
+AbaBAbaBAbaBAA : true
+baBAbaBAbaBAAA : true
+AAbaaBAA : true
+bABabABabABabABA : true
+baBAbbABBA : true
+baBAbaBAbaBAbABA : true
+
+aa : 
+aabABabABabABa : true
+abbaBBabAB : true
+aabAABaa : true
+
+BABA : 
+baBAbaBAbABBA : true
+
+AAA : 
+bAABAb : true
+AAbaBAbaBAA : true
+BAbabABAA : bbaaab
+bABabABabABAA : true
+AbaBAbaBAAA : true
+AbaBAbaBAbABA : true
+
+AB : 
+abAABBabAB : true
+
+bAb : 
+aabAAAb : true
+
+aaB : 
+BabbaBB : true
+abaaBAB : aaBBab
+
+bbb : 
+AbababA : bbAAAb
+
+aaaaa : 
+aabaBaa : true
+aabaaBa : true
+abaaBaa : true
+
+AAAAA : 
+AAbAABA : true
+AbAABAA : true
+AAbABAA : true
+AAAAA : true
+
+bbaba : 
+abbbaBAbaB : true
+
+ABBA : 
+AbaBABBA : true
+bABabABBBA : true
+
+BA : 
+bABaaBAA : BAAbAB
+baBAbaBBAA : true
+ABabABBabA : true
+
+ba : 
+baBAbbaaBA : true
+aBAbbaBAba : true
+
+ABA : 
+bAABaBA : ABBAbA
+bABBBAb : true
+
+bb : 
+babbabABA : AAAbbb
+
+aaa : 
+aabABabABaa : true
+aaabABabABa : true
+abaBabABabABa : true
+
+BB : 
+BaBabABA : true
+baBBaBAA : true
+
+A : 
+AbaBabABA : true
+baBAbaaBAAA : true
+AbABabaBA : true
+bABabaBAA : true
+abAABAbaB : true
+baBabABAA : true
+baBAbaBAbaBAbaBAA : true
+
+B : 
+baBBabABA : true
+aBabABBAb : true
+
+BaB : 
+BaaaBAA : true
+
+aaaBB : 
+aBabaBB : abbaBa
+
+ABABA : 
+bABBABA : BAAbbA
+
+bbAA : 
+baBAbaBAbbABA : true
+
+bAAA : 
+bbAbABA : AABBAb
+bbABAbA : ABBAAb
+bbAABA : true
+bbABAA : true
+
+AAAA : 
+baBAbABAAA : true
+AAbaBAAA : true
+AbABabABAA : true
+AbAABabABA : true
+bAABAbaBAA : true
+
+Ba : 
+baBabABaBA : aabABaBAb
+
+abb : 
+baBabbA : aabbAb
+
+aBB : 
+aaBAABa : true
+
+a : 
+bABabaaBA : true
+abABAbaBa : true
+abaBAbABa : true
+
+b : 
+baBAbabaBAA : BAbbaBAAba
+BabbaBAbA : true
+BababABabAA : abbABabAAB
+
+BAA : 
+bABaBAA : BBAAbA
+
+BBBAA : 
+BABaBAA : BaaBAB
+
+BAB : 
+aBBAbAB : BBAABa
+
+abbba : 
+BabbbaB : true
+
+aabab : 
+abaBABabab : aBABaaa
+
+aaaa : 
+aabaBAbaBa : true
+aaabABaa : true
+abaBAbaaBa : true
+
+49
+
+bbAbABA : AABBAb
+baBAbABAAA : true
+BABAbabABA : AbabAAA
+bbABAbA : ABBAAb
+bABabaaBA : true
+bbABBAb : true
+abaaBB : true
+BabAbABA : true
+baBabbA : aabbAb
+bbAABA : true
+bAABaBA : ABBAbA
+aaBAABa : true
+baBBabABA : true
+abABAbaBa : true
+bAABAb : true
+AAbaBAAA : true
+AbABabABAA : true
+aabaBAbaBa : true
+aabABabABabABa : true
+AAbaBAbaBAA : true
+AAbAABA : true
+AbAABAA : true
+AbAABabABA : true
+babbabABA : AAAbbb
+abbbaBAbaB : true
+AbaBabABA : true
+BABaBAA : BaaBAB
+bABaaBAA : BAAbAB
+BabbaBB : true
+aaabABaa : true
+aBabaBB : abbaBa
+abaBAbABa : true
+baBAbaBBAA : true
+AbaBAbaBAbaBAA : true
+abaBABabab : aBABaaa
+baBAbaaBAAA : true
+baaBAbaBAbaBAA : true
+baBAbaBAbaBAAA : true
+baaBAbaBBA : true
+AbaabAA : true
+baBAbaBAbbABA : true
+aabaBaa : true
+aabABabABaa : true
+BabaaB : true
+aBabABBAb : true
+baBAbbaaBA : true
+bABabABabaBA : true
+aBAbbaBAba : true
+abbaBBabAB : true
+bAbaBAbaBAA : aBAbaBAAbb
+ABabABBabA : true
+baBAbabaBAA : BAbbaBAAba
+aaabABabABa : true
+abbABabAAB : true
+bABBABA : BAAbbA
+AbABabaBA : true
+babABabABabABA : ABabABabAAbab
+abaBAbaaBa : true
+aabaaBa : true
+abAABBabAB : true
+bABabaBAA : true
+BAbabABAA : bbaaab
+baBabABaBA : aabABaBAb
+aBBAbAB : BBAABa
+AAbABAA : true
+AAbaaBAA : true
+bAABAbaBAA : true
+abAABAbaB : true
+BaaaBAA : true
+babABAA : ABAAbb
+baBabABAA : true
+aBABABa : BBBaaa
+AAAAA : true
+baBAbaBabABA : true
+bABabABabABAA : true
+AbaBABBA : true
+bABaBAA : BBAAbA
+abaaBAB : aaBBab
+abaaBaa : true
+abABAbaBAbaB : true
+aabAABaa : true
+baBAbaBAbaBAbaBAbaBA : true
+abaBabABabABa : true
+bABabABabABabABA : true
+bABBBAb : true
+BabbaBAbA : true
+AbaBAbaBAAA : true
+BababABabAA : abbABabAAB
+babAABA : AABAbb
+BabbbaB : true
+baBAbbABBA : true
+abaBABa : aBBaab
+baaaBAAA : true
+AbaBAbaBAbABA : true
+baBAbaBAbaBAbaBAA : true
+baBAbaBAbABBA : true
+aabAAAb : true
+bABabABBBA : true
+AbabABA : bABAAb
+AbababA : bbAAAb
+abbabABa : true
+baBAbaBAbaBAbABA : true
+BaBabABA : true
+abAbaaB : baaBab
+abbaBabABabAB : true
+baBBaBAA : true
+bbABAA : true
+
+FINAL COUNT: 33
+
+BBaaBA
+abAbbbaBAb
+AbbbbAB
+AbbabA
+AbAABabaB
+ABabbAAb
+aBAbABabb
+bbbbaBAb
+aBAbAAABAb
+aabABabABabABa
+abABabABaaa
+bbabbAb
+AbAABabABA
+BBAAAB
+bABBAbaBAb
+ABAbaaBab
+baBAbaBBAA
+ABabAABaaab
+baaBAbaBAbaBAA
+baaBAbaBBA
+ABabbbaabABab
+BaBBBBA
+ABabABaBAbab
+bAABAbaBAA
+AAbaaBAA
+bbbbb
+AbaBAbaBABBaB
+baBAbaBAbaBAbaBAbaBA
+aBABabABabABB
+abABabABaBABabAB
+bbABBBab
+babbABabABabA
+BAbaBAbaaBAbaBAba
+
+
+bbbbb
+BBaaBA
+AbbabA
+BBAAAB
+AbbbbAB
+bbabbAb
+BaBBBBA
+ABabbAAb
+bbbbaBAb
+AAbaaBAA
+bbABBBab
+AbAABabaB
+aBAbABabb
+ABAbaaBab
+abAbbbaBAb
+aBAbAAABAb
+AbAABabABA
+bABBAbaBAb
+baBAbaBBAA
+baaBAbaBBA
+bAABAbaBAA
+abABabABaaa
+ABabAABaaab
+ABabABaBAbab
+ABabbbaabABab
+AbaBAbaBABBaB
+aBABabABabABB
+babbABabABabA
+aabABabABabABa
+baaBAbaBAbaBAA
+abABabABaBABabAB
+BAbaBAbaaBAbaBAba
+baBAbaBAbaBAbaBAbaBA
